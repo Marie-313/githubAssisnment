@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Machine</title>
+    <style>
+      body {
+        background-color: rgb(248, 211, 48);
+        color: rgb(94, 7, 1); /* Changed text color to white */
+        font-family: Arial, sans-serif;
+        text-align: center;
+        cursor: pointer;
+        padding: 50px;
+        border: 5;
+      }
+      button {
+        padding: 15;
+        font-size: large;
+        color: rgb(255, 251, 9);
+        background-color: rgb(148, 56, 3);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ready to laugh!</h1>
+    <div id="joke" style="font-size: 24px; margin: 20px"></div>
+    <button onclick="newJoke()">HaHaHa!</button>
+    <script>
+      const jokes = [
+        "Why did the computer go to the doctor? Because it had a virus!",
+        "Why was the computer cold? It left its Windows open!",
+        "Why did the programmer quit his job? Because he didn't get arrays!",
+        "How do you comfort a JavaScript bug? You console it!",
+        "Why do programmers prefer dark mode? Because light attracts bugs!",
+        "What do you call a computer that sings? A Dell!",
+        "Why was the computer tired when it got home? It had a hard drive!",
+        "Why did the computer break up with the internet? There were too many connections!",
+        "What do you get when you cross a computer and a lifeguard? A screensaver!",
+        "Why did the computer keep freezing? It left its Windows open!",
+        "Why couldn't the computer take its hat off? Because it had a bad case of CAPS LOCK!",
+        "What did the computer do at lunchtime? Had a byte!",
+        "Why are computers so smart? They listen to their motherboards!",
+        "Why did the computer cross the road? To get to the other side of the network!",
+        "What do you call a computer that can play music? A tune-up!",
+        "Why was the computer stressed? Too many tabs open!",
+        "What do you call an IT teacher? A nerd!",
+        "Why did the laptop marry the desktop? They had a strong connection!",
+        "What do you call a computer that tells jokes? A pun-derful machine!",
+        "Why did the computer go to art school? To improve its graphics!",
+      ];
+
+      function newJoke() {
+        const randomIndex = Math.floor(Math.random() * jokes.length);
+        document.getElementById("joke").innerText = jokes[randomIndex];
+      }
+    </script>
+  </body>
+</html>

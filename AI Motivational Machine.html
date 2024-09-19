@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Motivational Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #07c5ff;
+      }
+      .container {
+        margin: 20px 0;
+        padding: 35px;
+        background: rgb(252, 233, 219);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #4d0101;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #fbfbfc;
+        color: rgb(73, 1, 43);
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      button:hover {
+        background-color: #25c0fd;
+      }
+      #quoteDisplay {
+        height: 130px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: #f7eed9;
+        resize: none;
+        overflow-y: auto;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: medium;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AI Motivational Generator</h1>
+    <div class="container">
+      <label for="userInput"
+        >Enter a word (e.g., strength, hope, faith, courage):</label
+      >
+      <input type="text" id="userInput" placeholder="Type your word here..." />
+      <button onclick="generateQuote()">Generate Quote</button>
+    </div>
+    <div class="container">
+      <label for="quoteDisplay">Generated Motivational Quote:</label>
+      <textarea
+        id="quoteDisplay"
+        readonly
+        placeholder="Your motivational quote will appear here..."
+      ></textarea>
+    </div>
+
+    <script>
+      const quotes = {
+        strength: [
+          "Strength doesn’t come from what you can do. It comes from overcoming the things you once thought you couldn’t.",
+          "You never know how strong you are until being strong is your only choice.",
+          "Strength is not just about what you can do, but how much you can endure.",
+          "The weak fall, but the strong will remain and never go under!",
+          "Strength and growth come only through continuous effort and struggle.",
+          'Courage doesn’t always roar. Sometimes courage is the quiet voice at the end of the day saying, "I will try again tomorrow."',
+          "Strength is the ability to break a chocolate bar into four pieces with your bare hands—and then eat just one of those pieces.",
+          "It is not the mountain we conquer, but ourselves.",
+          "Strength is not the absence of fear but the triumph over it.",
+          "In the middle of difficulty lies opportunity.",
+        ],
+        hope: [
+          "Hope is being able to see that there is light despite all of the darkness.",
+          "Once you choose hope, anything’s possible.",
+          "Hope is the thing with feathers that perches in the soul.",
+          "In the midst of winter, I found there was, within me, an invincible summer.",
+          "Hope is a waking dream.",
+          "The best way to predict the future is to create it.",
+          "Hope is the anchor of the soul.",
+          "Everything that is done in this world is done by hope.",
+          "Hope is not a strategy. But it is a necessary foundation for any strategy.",
+          "Where there is hope, there is life.",
+        ],
+        faith: [
+          "Faith is taking the first step even when you don’t see the whole staircase.",
+          "Faith is the substance of things hoped for, the evidence of things not seen.",
+          "Nothing is impossible when you have faith.",
+          "Faith sees the invisible, believes the unbelievable, and receives the impossible.",
+          "To be a Christian means to forgive the inexcusable because God has forgiven the inexcusable in you.",
+          "Faith is the bird that feels the light and sings when the dawn is still dark.",
+          "Faith is a knowledge within the heart, beyond the reach of proof.",
+          "You may be surprised at how far you can go without seeing a single step ahead.",
+          "Faith is the strength by which a shattered world shall emerge into the light.",
+          "The greatest act of faith is when a man understands he is not God.",
+        ],
+        courage: [
+          "Courage is not the absence of fear, but the triumph over it.",
+          "It takes courage to grow up and become who you really are.",
+          "Courage is grace under pressure.",
+          "Courage is the first of human qualities because it is the quality which guarantees all others.",
+          "The opposite of courage in our society is not cowardice, it is conformity.",
+          "Courage is being scared to death but saddling up anyway.",
+          "Courage is the power to let go of the familiar.",
+          "It is not enough to be brave; you must be brave for something.",
+          "Courage is the commitment to begin without any guarantee of success.",
+          "You cannot swim for new horizons until you have courage to lose sight of the shore.",
+        ],
+      };
+
+      function generateQuote() {
+        const input = document.getElementById("userInput").value.toLowerCase();
+        const quoteArray = quotes[input] || [
+          "Please enter a valid word: strength, hope, faith, or courage.",
+        ];
+        const randomQuote =
+          quoteArray[Math.floor(Math.random() * quoteArray.length)];
+        document.getElementById("quoteDisplay").value = randomQuote;
+      }
+    </script>
+  </body>
+</html>

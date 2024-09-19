@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Clock</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        color: rgb(27, 95, 95);
+      }
+      .clock {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #000;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>World Clock</h1>
+    <div class="clock" id="new-york">
+      <h2>New York</h2>
+      <p id="time-ny"></p>
+    </div>
+    <div class="clock" id="london">
+      <h2>London</h2>
+      <p id="time-london"></p>
+    </div>
+    <div class="clock" id="tokyo">
+      <h2>Tokyo</h2>
+      <p id="time-tokyo"></p>
+    </div>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+
+        const nyTime = new Date(
+          now.toLocaleString("en-US", { timeZone: "America/New_York" })
+        );
+        document.getElementById("time-ny").innerText =
+          nyTime.toLocaleTimeString();
+
+        const londonTime = new Date(
+          now.toLocaleString("en-GB", { timeZone: "Europe/London" })
+        );
+        document.getElementById("time-london").innerText =
+          londonTime.toLocaleTimeString();
+
+        const tokyoTime = new Date(
+          now.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })
+        );
+        document.getElementById("time-tokyo").innerText =
+          tokyoTime.toLocaleTimeString();
+      }
+
+      setInterval(updateTime, 1000);
+      updateTime();
+    </script>
+  </body>
+</html>
